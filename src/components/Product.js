@@ -36,7 +36,7 @@ export const Product = () => {
             <>
                 {filter.map((products) => {
                     return (
-                        <>
+                        <div key={products.id}>
                             <div className='flex flex-col items-center shadow-lg md:h-[400px] xs:h-[400px] xs:py-10 md:w-64 xs:w-60 bg-white rounded-xl font-quicksand font-bold overflow-hidden px-4 text-center justify-self-center border-b-4 border-r-2 border-black-400'>
                                 <div>
                                     <img className='overflow-hidden bg-contain h-[200px] bg-no-repeat py-2 hover:scale-110 hover:ease-in-out delay-200' src={products.image} alt={products.title} />
@@ -45,7 +45,7 @@ export const Product = () => {
                                 <h4>&#8377;{Math.ceil(products.price * 79.97)}</h4>
                                 <Link to={`/products/${products.id}`} className='rounded-xl px-6 xs:px-4 py-2 bg-white text-black hover:bg-black hover:text-white transition-all shadow-lg'>Buy Now</Link>
                             </div>
-                        </>
+                        </div>
                     )
                 })}
             </>
