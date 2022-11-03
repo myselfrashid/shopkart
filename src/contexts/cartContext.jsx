@@ -11,6 +11,7 @@ export const Context = (props) => {
         } else {
           return [...state, action.payload];
         }
+
       case "INCREASE":
         const tempstate1 = state.map((product) => {
           if (product.id === action.payload.id) {
@@ -20,6 +21,7 @@ export const Context = (props) => {
           }
         });
         return tempstate1;
+
       case "DECREASE":
         const tempstate2 = state.map((product) => {
           if (product.id === action.payload.id) {
@@ -29,6 +31,7 @@ export const Context = (props) => {
           }
         });
         return tempstate2;
+
       case "REMOVE":
         const tempstate3 = state.filter(
           (product) => product.id !== action.payload.id

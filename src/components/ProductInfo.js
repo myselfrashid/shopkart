@@ -56,8 +56,8 @@ export default function ProductInfo() {
     }
     return (
         <div>
-            <div className='flex'>
-                <div className='flex'>
+            <div className=''>
+                <div className=''>
                     {loading ? <Loading /> : <ShowProduct />}
                 </div>
             </div>

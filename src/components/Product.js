@@ -37,9 +37,9 @@ export const Product = () => {
                 {filter.map((products) => {
                     return (
                         <div key={products.id}>
-                            <div className='flex flex-col items-center shadow-lg md:h-[400px] xs:h-[400px] xs:py-10 md:w-64 xs:w-60 bg-white rounded-xl font-quicksand font-bold overflow-hidden px-4 text-center justify-self-center border-b-4 border-r-2 border-black-400'>
+                            <div className='flex flex-col items-center shadow-lg md:h-[400px] xs:h-[400px] xs:py-10 md:w-64 xs:w-60 bg-white rounded-xl font-quicksand font-bold overflow-hidden px-4 text-center border-b-4 border-r-2 border-black-400 justify-center'>
                                 <div>
-                                    <img className='overflow-hidden bg-contain h-[200px] bg-no-repeat py-2 hover:scale-110 hover:ease-in-out delay-200' src={products.image} alt={products.title} />
+                                    <img className='overflow-hidden bg-contain h-[200px] bg-no-repeat py-2 hover:scale-110 hover:ease-in-out delay-200 hover:transition-all' src={products.image} alt={products.title} />
                                 </div>
                                 <h3 className=''>{(products.title).slice(0,28).concat("...")}</h3>
                                 <h4>&#8377;{Math.ceil(products.price * 79.97)}</h4>
@@ -57,8 +57,8 @@ export const Product = () => {
         setFilter(listUpdated);
     }
     return (
-        <div className='grid w-full px-10 font-quicksand'>
-            <p className='bg-black grid grid-cols-1 bg-black-500 md:px-1 xs:px-0 md:py-2 xs:py-0 sm:text-2xl font-nunito xs:text-xl justify-items-center'>Categories
+        <div className='font-quicksand'>
+            <p className='bg-black grid grid-cols-1 text-white md:px-1 xs:px-0 md:py-2 xs:py-0 sm:text-2xl font-nunito xs:text-xl justify-items-center'>Categories
             </p>
             <div className='grid md:grid-cols-5 xs:grid-cols-3 font-semibold sm:text-2xl xs:text-sm gap-y-3 md:py-2 xs:py-5 place-content-center'>
                 <button className='text-black' onClick={()=> setFilter(data)}>All</button>
@@ -69,11 +69,11 @@ export const Product = () => {
             </div>
             <div className='grid w-full'>
                 <div>
-                    <h1 className='text-4xl font-bold bg-black text-black uppercase font-sans text-center md:text-2xl p-2 xs:text-sm'>Trending Items</h1>
+                    <h1 className='text-4xl font-bold bg-black text-white uppercase font-sans text-center md:text-2xl p-2 xs:text-sm'>Trending Items</h1>
                     <hr />
                 </div>
             </div>
-            <div className='bg-black-100 grid md:grid-cols-4 xs:grid-cols-1 gap-y-10'>
+            <div className='grid md:grid-cols-4 xs:grid-cols-1 gap-y-10 justify-items-center'>
                 {loading ? <Loading /> : <ShowProducts />}
             </div>
         </div>

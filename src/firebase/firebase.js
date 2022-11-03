@@ -61,7 +61,7 @@ export const createNewUserWithEmailAndPassword = async (email, password) => {
 }
 
 export const signInUserWithEmailAndPassword = async (email, password) => {
-    if(!email || !password) 
+    if(!email || !password)  
     return;
     return await signInWithEmailAndPassword(auth, email, password);
 }
